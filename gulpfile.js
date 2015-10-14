@@ -28,7 +28,7 @@ function handleError() {
 
 gulp.task('browserify', function () {
 
-    return browserify({debug: false, standalone: '1VK'})
+    return browserify({debug: false, standalone: 'OneVK'})
         .add(bundleMainPath)
         .bundle()
         .pipe(source(bundleName))
@@ -37,7 +37,7 @@ gulp.task('browserify', function () {
 });
 gulp.task('uglify', ['browserify'], function () {
     return gulp.src(path.join(publicDir, bundleName))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(publicDir))
 });
 
